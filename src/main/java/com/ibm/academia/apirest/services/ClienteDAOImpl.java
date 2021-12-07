@@ -1,7 +1,5 @@
 package com.ibm.academia.apirest.services;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,34 +11,34 @@ public class ClienteDAOImpl extends GenericoDAOImpl<Cliente, ClienteRepository>i
 {
 
 	@Autowired
-	public ClienteDAOImpl(ClienteRepository repository) {
+	public ClienteDAOImpl(ClienteRepository repository) 
+	{
 		super(repository);
 	}
 
 	@Override
-	public Optional<Cliente> buscarPorNombreYApellido(String nombre, String apellido) 
+	public Cliente buscarPorNombreYApellido(String nombre, String apellido) 
 	{
 		
 		return repository.buscarPorNombreYApellido(nombre, apellido);
 	}
 
 	@Override
-	public Optional<Cliente> buscarPorPasion(String pasion) 
+	public Iterable<Cliente> findClientesByedad(Integer edad) 
 	{
-		return repository.buscarPorPasion(pasion);
+		return repository.findClientesByedad(edad);
 	}
 
 	@Override
-	public Optional<Cliente> buscarPorSalario(Integer salarioMensual) 
+	public Iterable<Cliente> findClientesBysalarioMensual(Integer salarioMensual)
 	{
-		return repository.buscarPorSalario(salarioMensual);
+		return repository.findClientesBysalarioMensual(salarioMensual);
 	}
 
 	@Override
-	public Optional<Cliente> buscarPorEdad(Integer edad) 
+	public Iterable<Cliente> findClientesBypasion(String pasion) 
 	{
-		return repository.buscarPorEdad(edad);
+		return repository.findClientesBypasion(pasion);
 	}
-	
 
 }

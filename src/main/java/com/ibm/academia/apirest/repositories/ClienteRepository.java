@@ -1,7 +1,5 @@
 package com.ibm.academia.apirest.repositories;
 
-import java.util.Optional;
-
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -12,15 +10,12 @@ import com.ibm.academia.apirest.entities.Cliente;
 public interface ClienteRepository extends CrudRepository<Cliente, Integer> 
 {
 	@Query("select c from Cliente c where c.nombre = ?1 and c.apellido = ?2")
-	public Optional<Cliente> buscarPorNombreYApellido(String nombre, String apellido);
+	public Cliente buscarPorNombreYApellido(String nombre, String apellido);
 	
-	@Query("select c from Cliente c where c.pasion = ?1")
-	public Optional<Cliente> buscarPorPasion(String pasion);
+	public Iterable<Cliente> findClientesByedad(Integer edad);
 	
-	@Query("select c from Cliente c where c.salarioMensual = ?1")
-	public Optional<Cliente> buscarPorSalario(Integer salarioMensual);
+	public Iterable<Cliente> findClientesBysalarioMensual(Integer salarioMensual);
 	
-	@Query("select c from Cliente c where c.edad = ?1")
-	public Optional<Cliente> buscarPorEdad(Integer edad);
+	public Iterable<Cliente> findClientesBypasion(String pasion);
 
 }

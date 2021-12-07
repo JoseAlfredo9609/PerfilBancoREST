@@ -2,7 +2,7 @@ package com.ibm.academia.apirest.repositories;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import java.util.Optional;
+import java.util.List;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -25,7 +25,9 @@ public class ClienteRepositoryTest
 	void setUp() 
 	{
 		//Given 
-				clienteRepository.save(DatosDummy.cliente01());
+		clienteRepository.save(DatosDummy.cliente01());
+		clienteRepository.save(DatosDummy.cliente02());
+		
 	}
 	
 	@AfterEach
@@ -35,16 +37,50 @@ public class ClienteRepositoryTest
 	}
 	
 	@Test
-	@DisplayName("Test: Buscar persona por nombre y apellido")
+	@DisplayName("Test: Buscar cliente por nombre y apellido")
 	void buscarPorNombreYApellido() 
 	{	
 		//Given 
 		/*clienteRepository.save(DatosDummy.cliente01());*/
 		
 		//When
-		Optional<Cliente> expected = clienteRepository.buscarPorNombreYApellido(DatosDummy.cliente01().getNombre(),DatosDummy.cliente01().getApellido());
+		Cliente expected = clienteRepository.buscarPorNombreYApellido(DatosDummy.cliente01().getNombre(),DatosDummy.cliente01().getApellido());
 		
 		//Then
-		assertThat(expected.get()).isInstanceOf(Cliente.class);	
+		assertThat(expected).isInstanceOf(Cliente.class);	
+	}
+	
+	@Test
+	@DisplayName("Test: Buscar cliente por edad") 	
+	void findClientesByedad()
+	
+	{
+		//When
+		List<Cliente> expected = (List<Cliente>) clienteRepository.findClientesByedad(19);
+		
+		//Then
+		assertThat(expected.size() == 2).isTrue();
+	}
+	
+	@Test
+	@DisplayName("Test: Buscar cliente por salario mensual")
+	void findClientesBysalarioMensual() 
+	{
+		//When
+		List<Cliente> expected = (List<Cliente>) clienteRepository.findClientesBysalarioMensual(20000);
+		
+		//Then
+		assertThat(expected.size() == 1).isTrue();
+	}
+	
+	@Test
+	@DisplayName("Test: Buscar cliente por pasion")
+	void findClientesBypasion() 
+	{
+		//when
+		List<Cliente> expected = (List<Cliente>) clienteRepository.findClientesBypasion("Shopping");
+		
+		//Then
+		assertThat(expected.size() == 2).isTrue();
 	}
 }

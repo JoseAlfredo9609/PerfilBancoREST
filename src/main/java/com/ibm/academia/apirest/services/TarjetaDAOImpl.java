@@ -1,7 +1,5 @@
 package com.ibm.academia.apirest.services;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,13 +17,12 @@ public class TarjetaDAOImpl extends GenericoDAOImpl<Tarjeta, TarjetaRepository> 
 	}
 
 	@Override
-	public Optional<Tarjeta> buscarPorNumero(Integer numero) {
+	public Tarjeta buscarPorNumero(Integer numero) {
 		return repository.buscarPorNumero(numero);
 	}
 
 	@Override
-	public Optional<Tarjeta> buscarPorTipoTarjeta(String tipoTarjeta) {
-		
-		return repository.buscarPorTipoTarjeta(tipoTarjeta);
-	}
+	public Iterable<Tarjeta> findTarjetasBytipoTarjeta(String tipoTarjeta) {
+		return repository.findTarjetasBytipoTarjeta(tipoTarjeta);
+	}	
 }

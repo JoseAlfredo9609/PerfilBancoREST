@@ -2,7 +2,7 @@ package com.ibm.academia.apirest.repositories;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import java.util.Optional;
+import java.util.List;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -24,7 +24,7 @@ public class TarjetaRepositoryTest
 	void setUp() 
 	{
 		//Given 
-				tarjetaRepository.save(DatosDummy.tarjeta01());
+		tarjetaRepository.save(DatosDummy.tarjeta01());
 	}
 	
 	@AfterEach
@@ -34,16 +34,32 @@ public class TarjetaRepositoryTest
 	}
 	
 	@Test
-	@DisplayName("Test: Buscar tarjeta por numero")
-	void buscarPorNombreYApellido() 
+	@DisplayName("Test: Buscar tarjeta por tipo de tarjeta")
+	void findTarjetasBytipoTarjeta() 
 	{	
 		//Given 
 		/*tarjetaRepository.save(DatosDummy.tarjeta01());*/
 		
 		//When
-		Optional<Tarjeta> expected = tarjetaRepository.buscarPorNumero(DatosDummy.tarjeta01().getNumero());
+		List<Tarjeta> expected = (List<Tarjeta>) tarjetaRepository.findTarjetasBytipoTarjeta("Bsmart");
 		
 		//Then
-		assertThat(expected.get()).isInstanceOf(Tarjeta.class);	
+		assertThat(expected.size() == 1).isTrue();
 	}
+	
+	@Test
+	@DisplayName("Test: Buscar tarjeta por numero")
+	void buscarPorNumero()
+	{
+		//Given 
+		/*tarjetaRepository.save(DatosDummy.tarjeta01());*/
+		
+		//When
+		Tarjeta expected = tarjetaRepository.buscarPorNumero(DatosDummy.tarjeta01().getNumero());
+		
+		//Then
+		assertThat(expected).isInstanceOf(Tarjeta.class);	
+	}
+	
+	
 }

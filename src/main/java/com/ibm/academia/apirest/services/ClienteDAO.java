@@ -1,16 +1,14 @@
 package com.ibm.academia.apirest.services;
 
-import java.util.Optional;
-
 import com.ibm.academia.apirest.entities.Cliente;
 
 public interface ClienteDAO extends GenericoDAO<Cliente>
 {
-	public Optional<Cliente> buscarPorNombreYApellido(String nombre, String apellido);
+	public Cliente buscarPorNombreYApellido(String nombre, String apellido);
 	
-	public Optional<Cliente> buscarPorPasion(String pasion);
+	public Iterable<Cliente> findClientesByedad(Integer edad);
 	
-	public Optional<Cliente> buscarPorSalario(Integer salarioMensual);
+	public Iterable<Cliente> findClientesBysalarioMensual(Integer salarioMensual);
 	
-	public Optional<Cliente> buscarPorEdad(Integer edad);
+	public Iterable<Cliente> findClientesBypasion(String pasion);
 }
