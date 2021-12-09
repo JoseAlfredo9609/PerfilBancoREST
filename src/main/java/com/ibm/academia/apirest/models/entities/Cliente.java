@@ -1,4 +1,4 @@
-package com.ibm.academia.apirest.entities;
+package com.ibm.academia.apirest.models.entities;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -16,6 +16,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -33,15 +38,19 @@ public class Cliente implements Serializable
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
+	@NotNull(message = "No puede ser nulo")
+	@NotEmpty(message = "No puede ser vacio")
 	private String nombre;
 	
 	private String apellido;
 	
 	private String pasion;
 	
+	@Positive(message = "Debe ser mayor a cero")
 	@Column (name = "salario_mensual")
 	private Integer salarioMensual;
 	
+	@Positive(message = "Debe ser mayor a cero")
 	private Integer edad;
 	
 	@Column(name = "fecha_alta")
@@ -51,6 +60,7 @@ public class Cliente implements Serializable
 	private Date fechaModificacion;
 	
 	@ManyToOne(optional = true, cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
+	@JsonIgnoreProperties({"tarjeta"})
 	@JoinColumn(name = "tarjeta_id")
 	private Tarjeta tarjeta;
 

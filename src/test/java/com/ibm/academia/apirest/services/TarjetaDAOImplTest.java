@@ -12,7 +12,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import com.ibm.academia.apirest.datos.DatosDummy;
-import com.ibm.academia.apirest.entities.Tarjeta;
+import com.ibm.academia.apirest.models.entities.Tarjeta;
 import com.ibm.academia.apirest.repositories.TarjetaRepository;
 
 public class TarjetaDAOImplTest 

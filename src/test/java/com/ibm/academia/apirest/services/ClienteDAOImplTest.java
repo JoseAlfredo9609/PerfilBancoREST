@@ -12,7 +12,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import com.ibm.academia.apirest.datos.DatosDummy;
-import com.ibm.academia.apirest.entities.Cliente;
+import com.ibm.academia.apirest.models.entities.Cliente;
 import com.ibm.academia.apirest.repositories.ClienteRepository;
 
 public class ClienteDAOImplTest 

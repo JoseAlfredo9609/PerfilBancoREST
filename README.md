@@ -34,7 +34,7 @@ Paso a paso para ejecutar la aplicación:
 - Crear base de datos banco.
 Una vez creada la base de datos crear la base de datos universidad y dentro crear el schema universidad.
 
-- create schema banco;
+-Utilizar el schema public para probar los test;
 
 3. Clonar y descargar el presente proyecto:
 
