@@ -50,12 +50,12 @@ public class ClienteDAOImpl extends GenericoDAOImpl<Cliente, ClienteRepository>i
 	@Transactional
 	public Cliente actualizar(Cliente clienteEncontrado, Cliente cliente) 
 	{
-		Cliente clienteactualizado = null;
+		Cliente clienteActualizado = null;
 		clienteEncontrado.setSalarioMensual(cliente.getSalarioMensual());
 		clienteEncontrado.setEdad(cliente.getEdad());
 		clienteEncontrado.setPasion(cliente.getPasion());
-		clienteactualizado = repository.save(clienteEncontrado);
-		return clienteactualizado;
+		clienteActualizado = repository.save(clienteEncontrado);
+		return clienteActualizado;
 	}
 
 }

@@ -7,5 +7,7 @@ public interface TarjetaDAO extends GenericoDAO<Tarjeta>
 	public Tarjeta buscarPorNumero(Integer numero);
 	
 	public Iterable<Tarjeta> findTarjetasBytipoTarjeta(String tipoTarjeta);
+	
+	public Tarjeta actualizar(Tarjeta tarjetaEncontrada, Tarjeta tarjetaActualizar);
 
 }

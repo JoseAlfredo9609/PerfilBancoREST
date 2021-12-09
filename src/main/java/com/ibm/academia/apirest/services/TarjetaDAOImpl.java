@@ -24,5 +24,15 @@ public class TarjetaDAOImpl extends GenericoDAOImpl<Tarjeta, TarjetaRepository> 
 	@Override
 	public Iterable<Tarjeta> findTarjetasBytipoTarjeta(String tipoTarjeta) {
 		return repository.findTarjetasBytipoTarjeta(tipoTarjeta);
+	}
+
+	@Override
+	public Tarjeta actualizar(Tarjeta tarjetaEncontrada, Tarjeta tarjeta) {
+		Tarjeta tarjetaActualizada = null;
+		tarjetaEncontrada.setNumero(tarjeta.getNumero());
+		tarjetaEncontrada.setTipoTarjeta(tarjeta.getTipoTarjeta());
+		tarjetaEncontrada.setVigencia(tarjeta.getVigencia());
+		tarjetaActualizada = repository.save(tarjetaEncontrada);
+		return tarjetaActualizada;
 	}	
 }

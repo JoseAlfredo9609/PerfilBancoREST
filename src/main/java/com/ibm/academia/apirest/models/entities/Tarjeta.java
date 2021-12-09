@@ -16,6 +16,8 @@ import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -46,6 +48,7 @@ public class Tarjeta implements Serializable {
 	private Date fechaModificacion;
 	
 	@OneToMany(mappedBy =  "tarjeta", fetch =  FetchType.LAZY)
+	@JsonIgnoreProperties({"hibernateLazyInitializer", "tarjeta"})
 	private Set<Cliente> clientes;
 	
 	public Tarjeta(Integer id, Integer numero, String tipoTarjeta, String vigencia) {
