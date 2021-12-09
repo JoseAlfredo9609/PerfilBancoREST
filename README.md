@@ -1,4 +1,4 @@
-# PerfilBancarioREST
+# PerfilBancoREST
 Paso a paso para ejecutar la aplicación:
 
 ### Proyecto Micro Servicio \ API
@@ -20,7 +20,7 @@ Paso a paso para ejecutar la aplicación:
  
 - Tarjeta tiene: id, numero, vigencia, tipo de tarjeta fecha alta y fecha de modificacion.
 
-# UniversidadesREST
+# PerfilBancoREST
 Paso a paso para ejecutar la aplicación:
 
 1. Instalar PostgreSQL
