@@ -73,6 +73,12 @@ public class Cliente implements Serializable
 		this.salarioMensual = salarioMensual;
 		this.edad = edad;
 	}
+	
+	@Override
+	public String toString() {
+		return "Cliente [id=" + id + ", nombre=" + nombre + ", pasion=" + pasion + ", salarioMensual=" + salarioMensual
+				+ ", edad=" + edad + "]";
+	}
 
 	@Override
 	public int hashCode() 
@@ -103,11 +109,5 @@ public class Cliente implements Serializable
 		this.fechaModificacion = new Date();	
 	}
 	
-	@Override
-	public String toString() {
-		return "Cliente [id=" + id + ", nombre=" + nombre + ", pasion=" + pasion + ", salarioMensual=" + salarioMensual
-				+ ", edad=" + edad + "]";
-	}
-
 	private static final long serialVersionUID = -2614503563982312577L;	
 }

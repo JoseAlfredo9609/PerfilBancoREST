@@ -31,7 +31,7 @@ public class SpringFoxSwagger
     private ApiInfo apiInfo() 
     {
         return new ApiInfo(
-                "Universidad Backend API",
+                "Tarjetas Backend API",
                 "API para el manejo de nuestro banco",
                 "V1",
                 "Terminos del servicio",
