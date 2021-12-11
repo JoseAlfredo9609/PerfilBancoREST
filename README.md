@@ -28,7 +28,7 @@
 
 2. Luego de instalar el motor de base de datos debe:
 
-- Crear base de datos banco.
+- Crear base de datos perfil.
 - Una vez creada la base de datos crear la base de datos universidad las tablas entidades se crearan en el esquema publico
 
 3. Clonar y descargar el presente proyecto:

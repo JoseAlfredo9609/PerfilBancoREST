@@ -94,7 +94,6 @@ public class ClienteController
 			validaciones.put("Lista Errores", listaErrores);
 			return new ResponseEntity<Map<String, Object>>(validaciones, HttpStatus.BAD_REQUEST);
 		}	
-		
 		Cliente clienteGuardado = clienteDao.guardar(cliente);
 		return new ResponseEntity<Cliente>(clienteGuardado, HttpStatus.CREATED);
 	}
@@ -139,7 +138,6 @@ public class ClienteController
 		clienteDao.eliminarPorId(clienteId);
 		respuesta.put("OK", "Cliente ID: " + clienteId + " eliminado exitosamente");
 		return new ResponseEntity<Map<String, Object>>(respuesta, HttpStatus.ACCEPTED);
-		
 	}
 	
 	/**
