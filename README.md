@@ -29,7 +29,7 @@
 2. Luego de instalar el motor de base de datos debe:
 
 - Crear base de datos perfil.
-- Una vez creada la base de datos crear la base de datos universidad las tablas entidades se crearan en el esquema publico
+- Una vez creada la base de datos no es necesrio crear nungun esquema se crearan en el esquema publico para que puedas pobrar los test que incluye a aplicacion.
 
 3. Clonar y descargar el presente proyecto:
 
@@ -38,6 +38,8 @@
 5. Ejecutar el proyecto **debug as spring boot app.**
 
 6. Puedes probrar los endopints en la aplicacion de postman o en alguna otra similar. La URL de cada endpoint debe comenzar de la siguiente manera /api/v1/banco. 
+
+7. La url para probar el swagger es la siguiente: **http://localhost:9091/api/v1/banco/swagger-ui**
 
 
 ------------
