@@ -39,7 +39,7 @@
 
 6. Puedes probrar los endopints en la aplicacion de postman o en alguna otra similar. La URL de cada endpoint debe comenzar de la siguiente manera /api/v1/banco. 
 
-7. La url para probar el swagger es la siguiente: **http://localhost:9091/api/v1/banco/swagger-ui**
+7. La url para probar el swagger es la siguiente: **http://localhost:9091/api/v1/banco/swagger-ui/**
 
 
 ------------
